@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: 
+            url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfEI1ea93BAaJu5z_qHkJKSjPjqaE4JKTdg&s') left repeat-y,
+            url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfEI1ea93BAaJu5z_qHkJKSjPjqaE4JKTdg&s') right repeat-y;
+
+            background-size: 30%;
+            background-position:left,right;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 192, 203, 0.4);
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 50px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #8d14ff;
+        }
+
+        h1 {
+            font-size: 3em;
+            animation: pop 1s infinite alternate ease-in-out;
+        }
+
+        @keyframes pop {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .question {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+
+        .options label {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .next-button:hover {
+            background-color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-side"></div>
+
+    <div class="container">
+        <h1>Will you be my Valentine? (Not that you have a choice hehe)</h1>
+        <img src="20250209_175554.gif" alt="Valentine's Gif">
+
+        <div class="question">
+            <p>Choose your answer:</p>
+            <div class="options">
+                <label><input type="radio" name="valentine" value="yes"> Yes</label>
+                <label><input type="radio" name="valentine" value="yes_but_yes"> Yes, but yes</label>
+                <label><input type="radio" name="valentine" value="yes_but_no"> Yes, but no (no means yes)</label>
+                <label><input type="radio" name="valentine" value="no_choice"> No, you don't have a choice</label>
+            </div>
+        </div>
+
+        <button class="next-button" onclick="window.location.href='valentines.html'">Next Page</button>
+    </div>
+
+    <div class="background-side"></div>
+</body>
+</html>

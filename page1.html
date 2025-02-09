@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chippa</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>A Surprise</h1>
+    <button class="btn" onclick="showSurprise()">Click Here for the Surprise</button>
+    <div id="surpriseMessage">
+        <p>❤️ Surprise! I love you more than words can express! 💖</p>
+        <p>Dear Chippa, A smol present from your one and only boyfrien
+            Please make sure to read all the terms and conditions carefully</p>
+        <button class ="btn" onClick="location.href='page2.html'">Terms and Conditions</button>
+    </div>
+    <script>
+        function showSurprise() {
+            var message = document.getElementById('surpriseMessage');
+            message.style.display = 'block';  // Shows the surprise message when clicked
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Terms and Conditions</h1>
+        <form id="termsForm">
+            <label><input type="checkbox" class="term-checkbox"> Smile and stay cute always like you are.</label>
+            <label><input type="checkbox" class="term-checkbox"> Stay with husban....I mean boyfriend....I mean husban... till death do us part.</label>
+            <label><input type="checkbox" class="term-checkbox"> Be open to dating husban as a ghost also (No looking at other ghost boys).</label>
+            <label><input type="checkbox" class="term-checkbox"> Make beautiful pancakes for the aforementioned husban (even as a ghost). I don’t mind eating them and becoming soft and cuddly for you :)</label>
+            <label><input type="checkbox" class="term-checkbox"> Be mine forever and ever, I love you and will forever expect you to be Chippa to my Pajji forever. Thanks.</label>
+            <label><input type="checkbox" class="term-checkbox"> Say you love me right now (I am watching).</label>
+
+            <button type="button" id="continueButton" disabled>Continue</button>
+            <div id="warningMessage">Uh uh, don't be naughty! Check all the boxes!</div>
+        </form>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.term-checkbox');
+        const continueButton = document.getElementById('continueButton');
+        const warningMessage = document.getElementById('warningMessage');
+
+        function checkAllBoxes() {
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            continueButton.disabled = !allChecked;
+            continueButton.classList.toggle('enabled', allChecked);
+            warningMessage.style.display = 'none';
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', checkAllBoxes);
+        });
+
+        continueButton.addEventListener('click', () => {
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            if (allChecked) {
+                window.location.href = 'final_page.html';
+            } else {
+                warningMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
